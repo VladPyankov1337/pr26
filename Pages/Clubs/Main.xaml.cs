@@ -20,7 +20,7 @@ namespace WpfApp26.Pages.Clubs
 
         private void AddClub(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.init.OpenPages(new Pages.Clubs.Add(this));
         }
     }
 }
