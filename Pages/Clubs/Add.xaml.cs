@@ -26,12 +26,13 @@ namespace WpfApp26.Pages.Clubs
 
         private void AddClub(object sender, RoutedEventArgs e)
         {
-            if (Club == null)
+            if (this.Club == null)
             {
                 Club = new Models.Club();
                 Club.Name = this.Name.Text;
                 Club.Address = this.Address.Text;
                 Club.WorkTime = this.WorkTime.Text;
+                this.Main.AllClub.Clubs.Add(this.Club);
             }
             else
             {
@@ -39,6 +40,7 @@ namespace WpfApp26.Pages.Clubs
                 Club.Address = this.Address.Text;
                 Club.WorkTime = this.WorkTime.Text;
             }
+
             this.Main.AllClub.SaveChanges();
             MainWindow.init.OpenPages(new Pages.Clubs.Main());
 

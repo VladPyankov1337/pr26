@@ -50,7 +50,6 @@ namespace WpfApp26.Pages.Users
             }
             else
             {
-                User = new Models.Users();
                 User.FIO = this.FIO.Text;
                 User.RentStart = DTRentStart;
                 User.Duration = Convert.ToInt32(this.Duration.Text);
