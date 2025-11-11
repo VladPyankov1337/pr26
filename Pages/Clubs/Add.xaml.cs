@@ -1,0 +1,47 @@
+﻿using System.Windows;
+using System.Windows.Controls;
+
+namespace WpfApp26.Pages.Clubs
+{
+    /// <summary>
+    /// Логика взаимодействия для Add.xaml
+    /// </summary>
+    public partial class Add : Page
+    {
+        Main Main;
+        Models.Club Club;
+        public Add(Main Main, Models.Club Club = null)
+        {
+            InitializeComponent();
+            this.Main = Main;
+            if (Club != null)
+            {
+                this.Club = Club;
+                this.Name.Text = Club.Name;
+                this.Address.Text = Club.Address;
+                this.WorkTime.Text = Club.WorkTime;
+                BtnAdd.Content = "Изменить";
+            }
+        }
+
+        private void AddClub(object sender, RoutedEventArgs e)
+        {
+            if (Club == null)
+            {
+                Club = new Models.Club();
+                Club.Name = this.Name.Text;
+                Club.Address = this.Address.Text;
+                Club.WorkTime = this.WorkTime.Text;
+            }
+            else
+            {
+                Club.Name = this.Name.Text;
+                Club.Address = this.Address.Text;
+                Club.WorkTime = this.WorkTime.Text;
+            }
+            this.Main.AllClub.SaveChanges();
+            MainWindow.init.OpenPages(new Pages.Clubs.Main());
+
+        }
+    }
+}
