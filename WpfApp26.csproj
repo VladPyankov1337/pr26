@@ -156,6 +156,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\ClubsContext.cs" />
+    <Compile Include="Classes\Common\Config.cs" />
+    <Compile Include="Classes\UserContext.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -191,7 +194,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\Common\" />
     <Folder Include="Images\" />
     <Folder Include="Pages\Clubs\Elements\" />
     <Folder Include="Pages\Users\Elements\" />
